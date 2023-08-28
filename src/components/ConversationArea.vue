@@ -1,4 +1,3 @@
-<!-- ConversationArea.vue -->
 <template>
   <div class="scroll">
     <MessageEntry
