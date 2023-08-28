@@ -1,4 +1,3 @@
-// store.js
 import Vue from "vue";
 import Vuex from "vuex";
 import { currentUser, conversation } from "../constant/index";
