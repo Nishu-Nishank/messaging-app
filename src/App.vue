@@ -2,7 +2,7 @@
   <div id="app">
     <div class="flex justify-center items-center mt-10">
       <div class="w-[500px] h-[400px!important]">
-        <ConversationArea class="border h-full overflow-y-auto" />
+        <ConversationArea class="border h-full overflow-y-auto" ref="conversArea"/>
         <ComposeSection @submit="sendReply" />
       </div>
     </div>
@@ -26,10 +26,7 @@ export default {
   methods: {
     sendReply(msgData){
       this.$store.dispatch('sendReply',msgData);
-      this.$root.$emit('scrollToBottom')
     }
   }
 };
 </script>
-
-<style></style>
