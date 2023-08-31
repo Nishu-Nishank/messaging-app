@@ -1,3 +1,4 @@
+<!-- ConversationArea.vue -->
 <template>
   <div class="scroll">
     <MessageEntry
@@ -36,12 +37,11 @@ export default {
     this.scrollHeight = container.scrollHeight;
     container.scrollTop = this.scrollHeight;
   },
-  created() {
-    this.$root.$on("scrollToBottom", () => {
-      let container = document.querySelector(".scroll");
-      let scrollHeight = container.scrollHeight+50;
-      container.scrollTop = scrollHeight;
-    });
+  updated() {
+    let container = document.querySelector(".scroll");
+    let scrollHeight = container.scrollHeight;
+    let diff = scrollHeight - this.scrollHeight;
+    container.scrollTop = scrollHeight + diff;
   },
 };
 </script>
